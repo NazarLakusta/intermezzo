@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intermezzo — котедж у Дземброні</title>
+<meta name="description" content="Зруб на 8 гостей у Дземброні: басейн з підігрівом, сауна на дровах, чан, камін і вид на Чорногору. Від 4 000 грн за ніч.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0f1c18;--moss:#18291f;--resin:#22372c;--honey:#d9a35b;--honey-2:#e6b46f;
+  --fog:#ebe6db;--stone:#aab6ad;--line:rgba(235,230,219,.16);
+  --display:"Forum",Georgia,serif;--body:"Manrope",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--fog);font:400 17px/1.65 var(--body);overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--honey);outline-offset:3px;border-radius:6px}
+.wrap{padding-inline:var(--pad);max-width:1360px;margin-inline:auto}
+h2{font:400 clamp(40px,6.4vw,92px)/.98 var(--display);letter-spacing:-.01em}
+h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
+.lead{font-size:clamp(17px,1.4vw,20px);color:rgba(235,230,219,.85);max-width:56ch}
+.muted{color:var(--stone)}
+.small{font-size:14px}
+[hidden]{display:none!important}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 24px;border-radius:999px;background:var(--honey);color:#1d1408;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{background:var(--honey-2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--fog);box-shadow:inset 0 0 0 1.5px rgba(235,230,219,.45)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--fog)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px var(--pad);transition:background .4s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.nav.solid{background:rgba(15,28,24,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav.hide{transform:translateY(-110%)}
+.brand{font:400 26px/1 var(--display);text-decoration:none}
+.nav ul{display:flex;gap:6px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;opacity:.75;padding:8px 12px;border-radius:999px;transition:opacity .2s,background .2s}
+.nav ul a:hover{opacity:1}
+.nav ul a.active{opacity:1;background:rgba(235,230,219,.1)}
+.nav-r{display:flex;gap:10px;align-items:center}
+.season{display:flex;padding:4px;border-radius:999px;background:rgba(235,230,219,.1);font-size:14px;font-weight:600}
+.season button{padding:7px 12px;border-radius:999px;color:var(--stone)}
+.season button[aria-pressed="true"]{background:var(--fog);color:var(--night)}
+.nav .btn{min-height:42px;padding:10px 20px}
+@media(max-width:980px){.nav ul{display:none}}
+@media(max-width:860px){.nav .btn{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-media{position:absolute;inset:0}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.hero-media video{position:absolute;inset:0;opacity:0;transition:opacity 1s}
+.hero-media video.ready{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,24,.4) 0%,rgba(15,28,24,0) 28%,rgba(15,28,24,.2) 50%,var(--night) 100%)}
+.hero-copy{position:relative;z-index:2;width:100%;padding-bottom:clamp(110px,10vh,120px)}
+.hero h1{font:400 clamp(64px,15.5vw,240px)/.82 var(--display);letter-spacing:-.025em;margin-left:-.04em}
+.hero h1 span{display:inline-block}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:28px 40px;align-items:end;margin-top:26px}
+.hero-sub{max-width:44ch;font-size:clamp(16px,1.3vw,19px)}
+.hero-price{margin-top:14px;font-size:17px}
+.hero-price b{font:400 clamp(30px,3vw,42px)/1 var(--display);color:var(--honey);margin-right:6px}
+.hero-price span{color:var(--stone)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero-facts{display:flex;gap:clamp(18px,3vw,36px);list-style:none}
+.hero-facts b{display:block;font:400 30px/1 var(--display);color:var(--fog)}
+.hero-facts span{font-size:14px;color:var(--stone)}
+@media(max-width:860px){
+  .hero-copy{padding-bottom:104px}
+  .hero-row{grid-template-columns:1fr}
+  .hero-cta .btn{flex:1 1 100%}
+  .hero-facts{display:none}
+}
+
+/* ---------- intro ---------- */
+.intro{padding:clamp(80px,12vw,160px) 0 clamp(60px,8vw,110px)}
+.intro-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
+.intro p.big{font:400 clamp(28px,3.4vw,50px)/1.18 var(--display)}
+.intro p.big em{font-style:normal;color:var(--stone)}
+.perks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;font-size:15px}
+.perks li{padding-top:14px;border-top:1px solid var(--line)}
+.perks b{display:block;font-weight:600}
+.perks span{color:var(--stone)}
+@media(max-width:860px){.intro-grid{grid-template-columns:1fr}}
+
+/* ---------- day: desktop ---------- */
+.day{height:300vh}
+.day-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(300px,.8fr) 1.2fr;align-items:center;gap:clamp(24px,4vw,64px);padding:90px var(--pad) 40px;transition:background 1.2s ease}
+.day-text{position:relative;min-height:320px}
+.day-step{position:absolute;inset:auto 0 0 0;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;pointer-events:none}
+.day-step.on{opacity:1;transform:none;pointer-events:auto}
+.day-time{font:400 clamp(56px,7vw,110px)/1 var(--display);color:var(--honey);display:block;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.day-step h3{margin-bottom:12px}
+.day-step p{max-width:38ch;color:rgba(235,230,219,.88)}
+.day-frames{position:relative;height:min(72svh,640px);border-radius:28px;overflow:hidden}
+.day-frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1),transform 6s linear;transform:scale(1.08)}
+.day-frames img.on{clip-path:inset(0 0 0 0);transform:scale(1)}
+.day-progress{position:absolute;left:var(--pad);bottom:32px;display:flex;gap:8px}
+.day-progress i{width:36px;height:3px;background:rgba(235,230,219,.25);overflow:hidden;border-radius:2px}
+.day-progress b{display:block;height:100%;width:0;background:var(--honey);transition:width .4s}
+.sound{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 16px;border-radius:999px;background:rgba(235,230,219,.1);font-size:14px;font-weight:600}
+.sound[aria-pressed="true"]{background:var(--honey);color:#1d1408}
+
+/* ---------- day: mobile carousel ---------- */
+.day-m{display:none;padding:20px 0 80px}
+.day-m h2{padding-inline:var(--pad);margin-bottom:24px}
+.dm-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad);scrollbar-width:none}
+.dm-track::-webkit-scrollbar{display:none}
+.dm-card{flex:0 0 86%;scroll-snap-align:center;border-radius:24px;overflow:hidden;background:var(--moss)}
+.dm-card img{aspect-ratio:4/3.4;width:100%;object-fit:cover}
+.dm-card .tx{padding:20px 22px 24px}
+.dm-card .day-time{font-size:46px;margin-bottom:6px}
+.dm-card h3{font-size:26px;margin-bottom:8px}
+.dm-card p{font-size:15px;color:rgba(235,230,219,.88)}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(235,230,219,.25);transition:background .3s,width .3s}
+.dots i.on{background:var(--honey);width:22px;border-radius:4px}
+@media(max-width:860px){.day{display:none}.day-m{display:block}}
+
+/* ---------- territory ---------- */
+.territory{padding:clamp(90px,12vw,160px) 0}
+.ter-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--moss);font-size:15px;font-weight:600;color:var(--stone);transition:background .25s,color .25s}
+.chip[aria-pressed="true"]{background:var(--fog);color:var(--night)}
+.ter-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(16px,2.5vw,40px);margin-top:20px}
+.photomap{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3}
+.photomap img{width:100%;height:100%;object-fit:cover}
+.photomap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,24,0) 55%,rgba(15,28,24,.45));pointer-events:none}
+.spot{position:absolute;z-index:2;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center}
+.spot::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--honey);opacity:.3;animation:pulse 2.4s ease-out infinite}
+.spot i{width:16px;height:16px;border-radius:50%;background:var(--honey);box-shadow:0 0 0 4px rgba(15,28,24,.7);transition:transform .25s,background .25s}
+.spot[aria-pressed="true"] i{transform:scale(1.4);background:var(--fog)}
+.spot em{position:absolute;left:50%;top:calc(100% - 4px);transform:translateX(-50%);white-space:nowrap;font-style:normal;font-size:14px;font-weight:700;text-shadow:0 1px 10px #000,0 0 2px #000}
+@keyframes pulse{0%{transform:scale(.5);opacity:.55}100%{transform:scale(1.8);opacity:0}}
+.ter-card{background:var(--resin);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+.ter-card .ph{aspect-ratio:4/3;overflow:hidden}
+.ter-card img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.ter-card .tx{padding:24px 26px 28px}
+.ter-card h3{margin-bottom:8px}
+.tag{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;font-size:14px;font-weight:600;background:rgba(217,163,91,.16);color:var(--honey)}
+.tag.paid{background:rgba(235,230,219,.1);color:var(--fog)}
+@media(max-width:860px){.ter-grid{grid-template-columns:1fr}.spot em{display:none}.spot{width:40px;height:40px}}
+
+/* ---------- reviews ---------- */
+.reviews{padding:0 0 clamp(90px,12vw,160px)}
+.rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.rating{display:flex;align-items:center;gap:14px}
+.rating b{font:400 56px/1 var(--display);color:var(--honey)}
+.rev-track{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{border-radius:24px;padding:26px;background:var(--moss);display:flex;flex-direction:column;gap:14px;min-height:220px}
+.rev.ph{background:transparent;border:1.5px dashed rgba(217,163,91,.45)}
+.rev .stars{color:var(--honey);letter-spacing:2px}
+.rev p{font:400 22px/1.3 var(--display)}
+.rev .who{margin-top:auto;font-size:14px;color:var(--stone)}
+.draft{display:inline-block;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(217,163,91,.18);color:var(--honey)}
+@media(max-width:860px){.rev-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);scrollbar-width:none}.rev-track::-webkit-scrollbar{display:none}.rev{flex:0 0 84%;scroll-snap-align:center}}
+
+/* ---------- house ---------- */
+.house{padding:clamp(60px,8vw,120px) 0 clamp(90px,12vw,160px);background:linear-gradient(180deg,var(--night),#14241e)}
+.floors{display:flex;gap:6px;padding:6px;background:var(--moss);border-radius:999px;width:max-content;max-width:100%;overflow-x:auto;margin:32px 0 36px}
+.floors button{min-height:44px;padding:10px 22px;border-radius:999px;font-size:15px;font-weight:600;color:var(--stone);white-space:nowrap;transition:background .3s,color .3s}
+.floors button[aria-selected="true"]{background:var(--fog);color:var(--night)}
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,28px)}
+.room{border-radius:24px;overflow:hidden;background:var(--moss)}
+.gal{position:relative}
+.shots{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;aspect-ratio:4/3;scrollbar-width:none;scroll-behavior:smooth}
+.shots::-webkit-scrollbar{display:none}
+.shots img{flex:0 0 91%;width:91%;height:100%;object-fit:cover;scroll-snap-align:start;cursor:zoom-in}
+.shots img:last-child{flex-basis:100%;width:100%}
+.shots:has(img:only-child) img{flex-basis:100%}
+.count{position:absolute;top:12px;right:12px;padding:5px 11px;border-radius:999px;background:rgba(15,28,24,.72);backdrop-filter:blur(8px);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.gal .dots{position:absolute;left:0;right:0;bottom:12px;margin:0;pointer-events:none}
+.gal .dots i{background:rgba(255,255,255,.45)}
+.gal .dots i.on{background:#fff}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(15,28,24,.72);backdrop-filter:blur(8px);display:grid;place-items:center;opacity:0;transition:opacity .25s;font-size:20px}
+.arr.prev{left:12px}.arr.next{right:12px}
+.gal:hover .arr{opacity:1}
+.arr:disabled{opacity:0!important}
+@media(hover:none){.arr{display:none}}
+.room .tx{padding:22px 24px 26px}
+.room h3{font-size:28px;margin-bottom:4px}
+.room ul{list-style:none;margin-top:12px;font-size:15px;color:var(--stone);display:grid;gap:4px}
+.cap{font-size:14px;color:var(--honey);font-weight:600}
+.fade-in{animation:fadeIn .5s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---------- calculator ---------- */
+.price{padding:clamp(90px,12vw,160px) 0}
+.urgent{display:flex;align-items:center;gap:12px;margin-top:28px;padding:14px 18px;border-radius:16px;background:rgba(217,163,91,.14);border:1px solid rgba(217,163,91,.4);font-weight:600;width:max-content;max-width:100%}
+.urgent::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--honey);box-shadow:0 0 0 0 rgba(217,163,91,.6);animation:ping 1.8s infinite;flex:none}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(217,163,91,0)}100%{box-shadow:0 0 0 0 rgba(217,163,91,0)}}
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,3vw,48px);margin-top:40px}
+.calc-in{display:grid;gap:30px;align-content:start}
+.lbl{display:block;font-size:15px;font-weight:600;color:var(--stone);margin-bottom:12px}
+.datechips{margin-bottom:12px}
+.datechips .chip{background:var(--resin)}
+.datechips .chip[aria-pressed="true"]{background:var(--fog);color:var(--night)}
+.datebtn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:60px;padding:14px 20px;border-radius:16px;background:var(--moss);text-align:left;font-size:17px;font-weight:600}
+.datebtn small{display:block;font-size:14px;font-weight:500;color:var(--stone)}
+.datebtn[aria-expanded="true"]{box-shadow:inset 0 0 0 1.5px var(--honey)}
+.cal{margin-top:10px;padding:18px;border-radius:20px;background:var(--moss)}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cal-head b{font:400 24px/1 var(--display);text-transform:capitalize}
+.cal-head button{width:44px;height:44px;border-radius:12px;background:var(--resin);font-size:18px}
+.cal-head button:disabled{opacity:.3}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-grid .dw{font-size:13px;font-weight:700;color:var(--stone);padding:6px 0}
+.cal-grid .dw.we{color:var(--honey)}
+.cal-grid button{position:relative;aspect-ratio:1;max-height:48px;border-radius:12px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.cal-grid button.we{color:var(--honey)}
+.cal-grid button.hol::after{content:"";position:absolute;bottom:6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--honey)}
+.cal-grid button:disabled{opacity:.25;cursor:default}
+.cal-grid button.in{background:rgba(217,163,91,.2);border-radius:4px}
+.cal-grid button.edge{background:var(--honey);color:#1d1408;border-radius:12px}
+.cal-hint{margin-top:12px;font-size:14px;color:var(--stone)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.step{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--moss);border-radius:16px;padding:8px 8px 8px 18px;min-height:60px}
+.step .n{font-size:15px;font-weight:600}
+.step .n small{display:block;color:var(--stone);font-size:14px;font-weight:500}
+.ctl{display:flex;align-items:center;gap:8px}
+.ctl button{width:44px;height:44px;border-radius:12px;background:var(--resin);font-size:22px;line-height:1}
+.ctl button:disabled{opacity:.3;cursor:not-allowed}
+.ctl output{font:400 26px/1 var(--display);min-width:28px;text-align:center;font-variant-numeric:tabular-nums}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.seg button{min-height:72px;padding:12px 6px;border-radius:16px;background:var(--moss);text-align:center;transition:background .25s,color .25s}
+.seg button b{display:block;font:400 28px/1 var(--display)}
+.seg button span{font-size:13px;color:var(--stone)}
+.seg button[aria-pressed="true"]{background:var(--honey);color:#1d1408}
+.seg button[aria-pressed="true"] span{color:#5b3f17}
+.auto-note{font-size:14px;color:var(--stone);margin-top:10px}
+.auto-note button{color:var(--honey);text-decoration:underline;font-weight:600;font-size:14px}
+.warn{font-size:14px;color:#f0b37a;margin-top:10px}
+.extras{display:grid;gap:10px}
+.receipt{position:sticky;top:96px;align-self:start;background:var(--fog);color:var(--night);border-radius:28px;padding:clamp(24px,3vw,40px)}
+.receipt .sub{font-size:15px;color:#4c5a52}
+.receipt .tot{font:400 clamp(52px,6vw,84px)/1 var(--display);letter-spacing:-.02em;margin:8px 0 6px;font-variant-numeric:tabular-nums}
+.receipt .tot.hol{font-size:clamp(34px,3.6vw,48px)}
+.pp{font:400 26px/1.1 var(--display);color:#6b4a1d}
+.pp span{font-family:var(--body);font-size:15px;color:#4c5a52}
+.receipt dl{display:grid;grid-template-columns:1fr auto;gap:8px 16px;margin:22px 0;padding-top:18px;border-top:1px solid #cfc8b8;font-size:15px}
+.receipt dd{text-align:right;font-variant-numeric:tabular-nums}
+.tip{font-size:14px;color:#2f5b3f;background:#dfe6d9;padding:10px 14px;border-radius:12px;margin-bottom:16px}
+.send{display:grid;gap:8px}
+.send .btn{width:100%}
+.btn.dark{background:var(--night);color:var(--fog)}
+.btn.dark:hover{background:#1c2f28}
+.btn.line{background:transparent;color:var(--night);box-shadow:inset 0 0 0 1.5px #9aa59c}
+.btn.line:hover{box-shadow:inset 0 0 0 1.5px var(--night);background:transparent}
+.send-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toast{font-size:14px;color:#2f5b3f;min-height:20px;margin-top:8px}
+.fine{font-size:14px;color:#56635b;margin-top:12px}
+@media(max-width:860px){.calc{grid-template-columns:1fr}.receipt{position:static}.seg button span{font-size:12px}}
+
+/* ---------- around ---------- */
+.around{padding:clamp(60px,8vw,110px) 0}
+.peaks{margin-top:44px;border-top:1px solid var(--line)}
+.peak{display:grid;grid-template-columns:1.2fr 1fr auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
+.peak h3{font-size:clamp(28px,3vw,42px)}
+.peak p{color:var(--stone);font-size:15px}
+.peak b{font:400 clamp(26px,2.4vw,34px)/1 var(--display);color:var(--honey);white-space:nowrap}
+@media(max-width:700px){.peak{grid-template-columns:1fr auto}.peak p{grid-column:1/-1;order:3}}
+
+/* ---------- hosts ---------- */
+.hosts{padding:clamp(60px,8vw,110px) 0}
+.hosts-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:center}
+.hosts-ph{aspect-ratio:4/5;border-radius:28px;border:1.5px dashed rgba(217,163,91,.45);display:grid;place-items:center;text-align:center;padding:24px;color:var(--stone);font-size:15px}
+.hosts blockquote{font:400 clamp(28px,3.2vw,46px)/1.2 var(--display);margin:22px 0 18px}
+@media(max-width:860px){.hosts-grid{grid-template-columns:1fr}.hosts-ph{aspect-ratio:16/10}}
+
+/* ---------- road ---------- */
+.road{padding:clamp(90px,12vw,160px) 0}
+.road-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);margin-top:48px}
+.alert{background:rgba(217,163,91,.1);border:1px solid rgba(217,163,91,.45);border-radius:24px;padding:28px}
+.alert h3{font-size:28px;margin-bottom:10px;color:var(--honey)}
+.steps{list-style:none;counter-reset:s;display:grid;gap:22px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px}
+.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(235,230,219,.3);font:400 20px var(--display)}
+.steps b{display:block;margin-bottom:2px}
+.steps span{color:var(--stone);font-size:15px}
+.navs{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+@media(max-width:860px){.road-grid{grid-template-columns:1fr}.navs .btn{flex:1 1 140px}}
+
+/* ---------- faq ---------- */
+.faq{padding:0 0 clamp(90px,12vw,160px)}
+.faq-list{margin-top:36px;max-width:900px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:400 clamp(22px,2vw,28px)/1.25 var(--display)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);color:var(--honey);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
+
+/* ---------- footer ---------- */
+.foot{position:relative;overflow:hidden;padding:clamp(100px,14vw,180px) 0 120px;isolation:isolate}
+.foot-bg{position:absolute;inset:0;z-index:-1}
+.foot-bg img{width:100%;height:100%;object-fit:cover;opacity:.35}
+.foot-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--night),transparent 40%,var(--night))}
+.foot h2{max-width:14ch}
+.foot .tel{display:block;font:400 clamp(36px,6vw,80px)/1 var(--display);color:var(--honey);text-decoration:none;margin:30px 0 26px}
+.foot-meta{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:60px;font-size:14px;color:var(--stone)}
+
+/* ---------- mobile bar ---------- */
+.mbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:none;grid-template-columns:1.1fr 1fr 1fr;gap:6px;padding:6px;border-radius:20px;background:rgba(15,28,24,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 40px rgba(0,0,0,.45);transition:background .4s}
+.mbar.top{background:rgba(15,28,24,.35)}
+.mbar a,.mbar button{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:52px;justify-content:center;border-radius:14px;text-decoration:none;font-size:13px;font-weight:700}
+.mbar .main{background:var(--honey);color:#1d1408}
+.mbar svg{width:20px;height:20px}
+@media(max-width:860px){.mbar{display:grid}.foot{padding-bottom:150px}}
+
+/* ---------- sheets ---------- */
+.sheet{position:fixed;inset:0;z-index:90;display:none;background:rgba(5,10,8,.6);backdrop-filter:blur(4px)}
+.sheet.open{display:block}
+.sheet-in{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:min(440px,calc(100% - 24px));background:var(--resin);border-radius:28px;padding:26px;animation:up .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translate(-50%,30px);opacity:0}}
+.sheet h3{font-size:30px;margin-bottom:6px}
+.sheet .grid{display:grid;gap:10px;margin-top:20px}
+.sheet .x{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(235,230,219,.1);font-size:18px}
+.mbtn{display:flex;align-items:center;gap:14px;min-height:60px;padding:12px 18px;border-radius:16px;background:var(--moss);text-decoration:none;font-weight:700;text-align:left;width:100%}
+.mbtn:hover{background:#1f3428}
+.mbtn i{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-style:normal;flex:none}
+.mbtn small{display:block;font-weight:500;color:var(--stone);font-size:13px}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,14,12,.96);display:none;place-items:center}
+.lb.open{display:grid}
+.lb img{max-height:84vh;max-width:min(1300px,94vw);border-radius:14px;object-fit:contain;user-select:none}
+.lb .x,.lb .pv,.lb .nx{position:absolute;width:52px;height:52px;border-radius:50%;background:var(--resin);font-size:22px}
+.lb .x{top:18px;right:18px}
+.lb .pv{left:18px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:18px;top:50%;transform:translateY(-50%)}
+.lb .lc{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:14px;color:var(--stone);font-variant-numeric:tabular-nums}
+@media(max-width:700px){.lb .pv,.lb .nx{top:auto;bottom:12px;transform:none}}
+
+.reveal{opacity:0;transform:translateY(30px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero-media img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Головне меню">
+  <a href="#top" class="brand">Intermezzo</a>
+  <ul>
+    <li><a href="#territory">Територія</a></li>
+    <li><a href="#house">Номери</a></li>
+    <li><a href="#price">Ціни</a></li>
+    <li><a href="#road">Як доїхати</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="season" id="season" hidden><button aria-pressed="true" data-s="summer">Літо</button><button aria-pressed="false" data-s="winter">Зима</button></div>
+    <a href="#price" class="btn">Порахувати ціну</a>
+  </div>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-label="Intermezzo">
+  <div class="hero-media" id="heroMedia"><img src="img/svitanok.webp" data-winter="svitanok" alt="Світанок над долиною Дземброні, туман між горами" fetchpriority="high"></div>
+  <div class="hero-copy wrap">
+    <h1 aria-label="Intermezzo"><span>Inter</span><span>mezzo</span></h1>
+    <div class="hero-row">
+      <div>
+        <p class="hero-sub">Зруб на 8 гостей у Дземброні. Басейн з підігрівом, сауна на дровах, чан і тиша Чорногори.</p>
+        <p class="hero-price"><b>від 4 000 грн</b><span>за ніч · ≈ 1 250 грн з людини, якщо вас 8</span></p>
+        <div class="hero-cta">
+          <a href="#price" class="btn">Порахувати ціну</a>
+          <button type="button" class="btn ghost" data-open="contact">Написати господарям</button>
+        </div>
+      </div>
+      <ul class="hero-facts">
+        <li><b>4</b><span>номери</span></li>
+        <li><b>8</b><span>гостей</span></li>
+        <li><b>14 км</b><span>до витягу</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro wrap">
+  <div class="intro-grid">
+    <p class="big reveal">Будинок стоїть у присілку Горби, за півтора кілометра від центру села. <em>Ліс, річка Дземброня поруч і жодного шуму дороги.</em></p>
+    <ul class="perks reveal">
+      <li><b>Безперебійне світло</b><span>Будинок не вимикається разом з мережею</span></li>
+      <li><b>Свій санвузол</b><span>У кожному з чотирьох номерів</span></li>
+      <li><b>Камін у вітальні</b><span>І тераса з виходом на гори</span></li>
+      <li><b>Wi‑Fi і Smart TV</b><span>Київстар і Vodafone ловлять</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DAY: desktop -->
+<section class="day" id="day" aria-label="Один день в Intermezzo">
+  <div class="day-stage" id="dayStage">
+    <div class="day-text" id="dayText"></div>
+    <div class="day-frames" id="dayFrames"></div>
+    <div class="day-progress" aria-hidden="true" id="dayProg"></div>
+  </div>
+</section>
+<!-- DAY: mobile -->
+<section class="day-m" aria-label="Один день в Intermezzo">
+  <h2>Один день тут</h2>
+  <div class="dm-track" id="dmTrack"></div>
+  <div class="dots" id="dmDots"></div>
+</section>
+
+<!-- TERRITORY -->
+<section class="territory" id="territory">
+  <div class="wrap">
+    <div class="ter-head">
+      <h2 class="reveal">Що на території</h2>
+      <p class="lead reveal">Натисніть на точку на фото або оберіть місце нижче.</p>
+    </div>
+    <div class="chips" id="terChips" role="group" aria-label="Місця на території"></div>
+    <div class="ter-grid">
+      <div class="photomap reveal" id="photomap">
+        <img src="img/basejn-ranok.webp" data-winter="basejn-ranok" alt="Територія садиби: басейн, чан і гори" loading="lazy">
+      </div>
+      <article class="ter-card reveal" aria-live="polite">
+        <div class="ph"><img id="terImg" src="img/basejn.webp" alt=""></div>
+        <div class="tx">
+          <h3 id="terTitle"></h3>
+          <p class="muted" id="terText"></p>
+          <span class="tag" id="terTag"></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <h2 class="reveal">Що кажуть гості</h2>
+      <div class="rating reveal" id="rating"></div>
+    </div>
+    <div class="rev-track" id="revTrack"></div>
+  </div>
+</section>
+
+<!-- HOUSE -->
+<section class="house" id="house">
+  <div class="wrap">
+    <h2 class="reveal">Будинок по поверхах</h2>
+    <div class="floors" role="tablist" aria-label="Поверхи">
+      <button role="tab" aria-selected="false" data-floor="0">Цоколь</button>
+      <button role="tab" aria-selected="true" data-floor="1">1 поверх</button>
+      <button role="tab" aria-selected="false" data-floor="2">2 поверх</button>
+    </div>
+    <div class="floor-panel" data-panel="0" hidden><div class="rooms">
+      <article class="room"><div class="gal"><div class="shots"><img src="img/sauna.webp" alt="Сауна на дровах" loading="lazy"><img src="img/sauna-kimnata.webp" alt="Кімната відпочинку" loading="lazy"></div></div>
+        <div class="tx"><h3>Сауна</h3><span class="cap">До 6 осіб · 2000 грн за 2 години</span><ul><li>Фінська сауна на дровах</li><li>Кімната відпочинку зі столом</li></ul></div></article>
+    </div></div>
+    <div class="floor-panel" data-panel="1"><div class="rooms">
+      <article class="room"><div class="gal"><div class="shots"><img src="img/vitalnia.webp" alt="Вітальня з каміном" loading="lazy"><img src="img/obidnia.webp" alt="Обідня зона" loading="lazy"><img src="img/kukhnia.webp" alt="Кухня" loading="lazy"></div></div>
+        <div class="tx"><h3>Вітальня й кухня</h3><span class="cap">Спільна зона</span><ul><li>Камін, м'які меблі, Smart TV</li><li>Обідні столи на всю компанію</li><li>Плита, холодильник, мікрохвильовка, посуд</li><li>Вихід на терасу</li></ul></div></article>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/a-2.webp" alt="Люкс, двоспальне ліжко" loading="lazy"><img src="img/a-1.webp" alt="Зона відпочинку в люксі" loading="lazy"><img src="img/a-3.webp" alt="Шафа в люксі" loading="lazy"><img src="img/a-4.webp" alt="Санвузол люксу" loading="lazy"></div></div>
+        <div class="tx"><h3>Люкс</h3><span class="cap">2 гостей + 2 на дивані</span><ul><li>Двоспальне ліжко і розкладний диван</li><li>Стіл зі стільцями, шафа</li><li>Санвузол з душовою кабіною</li></ul></div></article>
+    </div></div>
+    <div class="floor-panel" data-panel="2" hidden><div class="rooms">
+      <article class="room"><div class="gal"><div class="shots"><img src="img/b-1.webp" alt="Двомісний номер" loading="lazy"><img src="img/b-2.webp" alt="Вихід на балкон" loading="lazy"><img src="img/b-3.webp" alt="Санвузол" loading="lazy"></div></div>
+        <div class="tx"><h3>Двомісний</h3><span class="cap">2 гостей</span><ul><li>Двоспальне ліжко, комод</li><li>Балкон з видом</li><li>Санвузол з душовою кабіною</li></ul></div></article>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/c-2.webp" alt="Двоярусне ліжко" loading="lazy"><img src="img/c-1.webp" alt="Двоспальне ліжко" loading="lazy"><img src="img/c-3.webp" alt="Санвузол" loading="lazy"></div></div>
+        <div class="tx"><h3>Двомісний плюс</h3><span class="cap">2 гостей + 2 · зручно з дітьми</span><ul><li>Двоспальне і двоярусне ліжка</li><li>Шафа, балкон</li><li>Санвузол з душовою кабіною</li></ul></div></article>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/d-2.webp" alt="Люкс на другому поверсі" loading="lazy"><img src="img/d-1.webp" alt="Диван і крісла" loading="lazy"><img src="img/d-3.webp" alt="Вихід на балкон" loading="lazy"><img src="img/balkon.webp" alt="Вид з балкона на басейн і гори" loading="lazy"><img src="img/d-4.webp" alt="Санвузол" loading="lazy"></div></div>
+        <div class="tx"><h3>Люкс з балконом</h3><span class="cap">2 гостей + 2 на дивані</span><ul><li>Двоспальне ліжко і розкладний диван</li><li>Балкон з видом на басейн і гори</li><li>Санвузол з душовою кабіною</li></ul></div></article>
+    </div></div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price" id="price">
+  <div class="wrap">
+    <h2 class="reveal">Скільки коштує</h2>
+    <p class="lead reveal" style="margin-top:20px">Оберіть дати й кількість гостей — сума порахується одразу. П'ятниця, субота й неділя рахуються за ціною вихідних.</p>
+    <div class="urgent" id="urgent" hidden></div>
+    <div class="calc">
+      <div class="calc-in">
+        <div>
+          <span class="lbl">Коли їдете</span>
+          <div class="chips datechips" id="dateChips"></div>
+          <button type="button" class="datebtn" id="dateBtn" aria-expanded="false" aria-controls="cal"><span id="dateTxt"></span><span aria-hidden="true">▾</span></button>
+          <div class="cal" id="cal" hidden>
+            <div class="cal-head"><button type="button" id="calPrev" aria-label="Попередній місяць">←</button><b id="calTitle"></b><button type="button" id="calNext" aria-label="Наступний місяць">→</button></div>
+            <div class="cal-grid" id="calGrid"></div>
+            <p class="cal-hint" id="calHint">Оберіть дату заїзду</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="lbl">Скільки вас</span>
+          <div class="extras">
+            <div class="step"><span class="n">Дорослі<small>і діти від 7 років</small></span><div class="ctl"><button type="button" data-g="adults" data-d="-1" aria-label="Менше дорослих">−</button><output id="g-adults">4</output><button type="button" data-g="adults" data-d="1" aria-label="Більше дорослих">+</button></div></div>
+            <div class="step"><span class="n">Діти до 7 років<small>безкоштовно без окремого місця</small></span><div class="ctl"><button type="button" data-g="kids" data-d="-1" aria-label="Менше дітей">−</button><output id="g-kids">0</output><button type="button" data-g="kids" data-d="1" aria-label="Більше дітей">+</button></div></div>
+          </div>
+        </div>
+
+        <div>
+          <span class="lbl" id="roomsLbl">Номери</span>
+          <div class="seg" role="group" aria-labelledby="roomsLbl">
+            <button type="button" data-r="1" aria-pressed="false"><b>1</b><span>до 2 гостей</span></button>
+            <button type="button" data-r="2" aria-pressed="true"><b>2</b><span>до 4 гостей</span></button>
+            <button type="button" data-r="3" aria-pressed="false"><b>3</b><span>до 6 гостей</span></button>
+            <button type="button" data-r="4" aria-pressed="false"><b>4</b><span>весь будинок</span></button>
+          </div>
+          <p class="auto-note" id="autoNote"></p>
+          <p class="warn" id="warn" hidden></p>
+        </div>
+
+        <div>
+          <span class="lbl">Додатково</span>
+          <div class="extras">
+            <div class="step"><span class="n">Сауна на дровах<small>2000 грн за 2 години</small></span><div class="ctl"><button type="button" data-x="sauna" data-d="-1" aria-label="Менше сеансів сауни">−</button><output id="x-sauna">0</output><button type="button" data-x="sauna" data-d="1" aria-label="Більше сеансів сауни">+</button></div></div>
+            <div class="step"><span class="n">Чан<small>2500 грн за 2 години</small></span><div class="ctl"><button type="button" data-x="chan" data-d="-1" aria-label="Менше сеансів чану">−</button><output id="x-chan">0</output><button type="button" data-x="chan" data-d="1" aria-label="Більше сеансів чану">+</button></div></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="receipt" aria-live="polite">
+        <span class="sub" id="rDates"></span>
+        <div class="tot" id="rTotal"></div>
+        <div class="pp" id="rPer"></div>
+        <dl id="rLines"></dl>
+        <p class="tip" id="rTip" hidden></p>
+        <div class="send" id="sendBtns"></div>
+        <div class="toast" id="toast" role="status"></div>
+        <p class="fine">Ціна орієнтовна, остаточну підтвердять господарі. Новорічні й святкові дати та знижки від 5 ночей — за домовленістю. Потрібна передоплата.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- AROUND -->
+<section class="around">
+  <div class="wrap">
+    <h2 class="reveal">Що поруч</h2>
+    <div class="peaks">
+      <div class="peak reveal"><h3>Піп Іван Чорногірський</h3><p>Маршрут на вершину з обсерваторією «Білий слон» проходить біля садиби</p><b>2028 м</b></div>
+      <div class="peak reveal"><h3>Вухатий Камінь</h3><p>Скелі на шляху до Попа Івана, звідти видно всю долину</p><b>1864 м</b></div>
+      <div class="peak reveal"><h3>Менчул</h3><p>Ще одна вершина, на яку можна вийти просто від будинку</p><b>пішки</b></div>
+      <div class="peak reveal"><h3>Витяг в Ільцях</h3><p>Найближче катання взимку. До Буковелю — 80 км</p><b>14 км</b></div>
+      <div class="peak reveal"><h3>Рафтинг і коні</h3><p>Організовуємо за домовленістю. Також гриби, ягоди, риболовля</p><b>за запитом</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<section class="hosts" id="hosts">
+  <div class="wrap hosts-grid">
+    <div class="hosts-ph reveal" id="hostsPhoto"><div><span class="draft">Чернетка</span><p style="margin-top:12px">Тут буде фото господарів</p></div></div>
+    <div class="reveal">
+      <span class="draft">Чернетка — текст від господарів</span>
+      <blockquote id="hostsQuote">«Тут буде кілька слів від господарів: як збудували цей дім і чим раді гостям».</blockquote>
+      <p class="muted" id="hostsName">Імена господарів</p>
+      <button type="button" class="btn ghost" data-open="contact" style="margin-top:24px">Написати господарям</button>
+    </div>
+  </div>
+</section>
+
+<!-- ROAD -->
+<section class="road" id="road">
+  <div class="wrap">
+    <h2 class="reveal">Як доїхати</h2>
+    <div class="road-grid">
+      <div class="alert reveal">
+        <h3>Дземброня — прикордонна зона</h3>
+        <p>В'їзд контролює Державна прикордонна служба. Щоб проїхати без затримок, подайте заяву заздалегідь — це займає кілька хвилин.</p>
+        <ol class="steps" style="margin-top:24px">
+          <li><div><b>За 5–10 днів до приїзду</b><span>Надішліть заяву на перебування в прикордонній смузі з туристичною метою на email Чернівецького прикордонного загону. Зразок підкажуть господарі.</span></div></li>
+          <li><div><b>Роздрукуйте копію</b><span>Візьміть її з собою на випадок перевірки.</span></div></li>
+        </ol>
+        <a class="btn ghost" id="formLink" href="#" hidden style="margin-top:22px">Відкрити зразок заяви</a>
+      </div>
+      <div class="reveal">
+        <ol class="steps">
+          <li><div><b>Івано-Франківськ → Яремче → Татарів</b><span>У Татарові поверніть за вказівником на Ворохту / Косів.</span></div></li>
+          <li><div><b>У селі Ільці — праворуч на Буркут</b><span>Далі приблизно 14 км до Дземброні.</span></div></li>
+          <li><div><b>Присілок Горби</b><span>Останній відрізок — ґрунтова дорога. Господарі можуть зустріти вас у центрі села.</span></div></li>
+        </ol>
+        <p class="muted" style="margin-top:22px;font-size:15px">Без авто: автобусом з Києва, Хмельницького чи Івано-Франківська до Верховини, далі автобусом до Дземброні або таксі.</p>
+        <div class="navs">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=48.0994,24.68247" target="_blank" rel="noopener">Маршрут у Google Maps</a>
+          <a class="btn ghost" href="https://waze.com/ul?ll=48.0994,24.68247&navigate=yes" target="_blank" rel="noopener">Waze</a>
+        </div>
+        <p class="muted small" style="margin-top:12px">GPS 48.0994, 24.68247</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="reveal">Часті питання</h2>
+    <div class="faq-list">
+      <details><summary>Чи працює басейн узимку?</summary><p>Басейн літній, з підігрівом і підсвіткою. Взимку він не обігрівається, зате працюють сауна на дровах і чан.</p></details>
+      <details><summary>Можна з собакою?</summary><p>Так, за попереднім запитом. Може стягуватися додаткова плата — уточніть, коли бронюєте.</p></details>
+      <details><summary>Що з харчуванням?</summary><p>Кухня повністю обладнана, можна готувати самим. Харчування від господарів — за домовленістю. Магазин за 1 км, найближче кафе — за 14 км.</p></details>
+      <details><summary>О котрій заїзд і виїзд?</summary><p>Заїзд після 14:00, виїзд до 12:00. Мінімальний термін — 2 доби.</p></details>
+      <details><summary>Що входить у ціну?</summary><p>Паркінг, Wi‑Fi, Smart TV, басейн, мангал з в'язкою дров, пральна машина, праска, фен, місце для сушіння лиж і речей. Прибирання й зміна білизни — раз на 3 дні.</p></details>
+      <details><summary>Чи буде світло під час відключень?</summary><p>Так, у будинку безперебійне живлення, опалення автономне водяне, гаряча вода — бойлер на 200 л.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="foot" id="contacts">
+  <div class="foot-bg"><img src="img/basejn.webp" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <h2 class="reveal">Оберіть дати — решту підготують господарі</h2>
+    <a class="tel" href="tel:+380508144498">+38 050 814 44 98</a>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="tel:+380508144498">Подзвонити</a>
+      <button type="button" class="btn ghost" data-open="contact">Написати в месенджер</button>
+    </div>
+    <div class="foot-meta">
+      <span>с. Дземброня, присілок Горби, Верховинський район</span>
+      <span>Заїзд з 14:00, виїзд до 12:00</span>
+      <span>© Intermezzo</span>
+    </div>
+  </div>
+</footer>
+</main>
+
+<nav class="mbar top" id="mbar" aria-label="Швидкі дії">
+  <a class="main" href="#price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2m4 0h2M8 15h2m4 0h2"/></svg>Ціна</a>
+  <button type="button" data-open="contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>Написати</button>
+  <a href="tel:+380508144498"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Подзвонити</a>
+</nav>
+
+<div class="sheet" id="contactSheet" role="dialog" aria-modal="true" aria-labelledby="csTitle">
+  <div class="sheet-in">
+    <button type="button" class="x" data-close aria-label="Закрити">✕</button>
+    <h3 id="csTitle">Написати господарям</h3>
+    <p class="muted small" id="csSub">Повідомлення з вашими датами вже буде написане — лишиться натиснути «Надіслати».</p>
+    <div class="grid" id="csGrid"></div>
+    <div class="toast" id="csToast" role="status" style="color:var(--honey)"></div>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Фото">
+  <img alt="">
+  <button type="button" class="x" aria-label="Закрити">✕</button>
+  <button type="button" class="pv" aria-label="Попереднє фото">←</button>
+  <button type="button" class="nx" aria-label="Наступне фото">→</button>
+  <span class="lc"></span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* =====================================================
+   НАЛАШТУВАННЯ — заповнити, коли дасть власник
+   ===================================================== */
+const CONFIG = {
+  phone: '+380508144498',
+  telegram: '',            // нік без @, напр. 'intermezzo_dzembronia' — порожньо = кнопку сховано
+  whatsapp: '380508144498',// номер WhatsApp без +, порожньо = сховано (перевірити, чи є WhatsApp)
+  viber: '+380508144498',
+  heroVideo: '',           // 'video/hero.mp4' — AI-відео на першому екрані
+  urgency: '',             // напр. 'Новий рік: залишилось 2 вільні номери' — порожньо = сховано
+  borderFormUrl: '',       // посилання на зразок заяви для прикордонної зони
+  googleReviewsUrl: 'https://maps.app.goo.gl/7FRZ2gowz24cJ1EM6',
+  rating: null,            // напр. {score: '4,9', count: 27}
+  reviews: [],             // [{text:'...', name:'Олена, Київ', when:'січень 2026'}]
+  winterImages: {},        // {'svitanok':'img/w-svitanok.webp', 'basejn-ranok':'img/w-chan.webp', ...}
+};
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const isMobile = () => matchMedia('(max-width:860px)').matches;
+
+/* ---------- hero video ---------- */
+if (CONFIG.heroVideo && !(navigator.connection && navigator.connection.saveData)) {
+  const v = document.createElement('video');
+  Object.assign(v, { src: CONFIG.heroVideo, muted: true, loop: true, playsInline: true, autoplay: true });
+  v.setAttribute('aria-hidden', 'true');
+  v.addEventListener('canplay', () => v.classList.add('ready'));
+  $('#heroMedia').appendChild(v);
+}
+
+/* ---------- day data ---------- */
+const DAY = [
+  { t: '06:40', h: 'Туман лежить у долині', p: 'Вийдіть на терасу з кавою, поки сонце підіймається над хребтом. Таке видно лише тут, на висоті майже кілометр.', img: 'svitanok', sky: 'linear-gradient(180deg,#2a2a33 0%,#5a4a48 60%,#1a2622 100%)' },
+  { t: '13:00', h: 'Басейн під горами', p: 'Басейн 5×10 м з підігрівом, поруч дитячий. Навколо газон і вид на ліс.', img: 'basejn-ranok', sky: 'linear-gradient(180deg,#1d3a3b 0%,#1a3029 100%)' },
+  { t: '19:30', h: 'Сауна на дровах і чан', p: 'Сауна на шістьох у цоколі з кімнатою відпочинку. Після неї — гарячий чан просто неба.', img: 'sauna', sky: 'linear-gradient(180deg,#3a2414 0%,#1d1a12 100%)' },
+  { t: '22:00', h: 'Вечір біля каміна', p: 'Велика вітальня з каміном і столами на всю компанію. Кухня поруч, готуйте самі або домовтесь про харчування.', img: 'vitalnia', sky: 'linear-gradient(180deg,#24180d 0%,#0f1c18 100%)', sound: true },
+];
+const soundBtn = () => `<button type="button" class="sound" data-sound aria-pressed="false">🔥 Увімкнути звук каміна</button>`;
+$('#dayText').innerHTML = DAY.map((d, i) => `<div class="day-step${i ? '' : ' on'}"><span class="day-time">${d.t}</span><h3>${d.h}</h3><p>${d.p}</p>${d.sound ? soundBtn() : ''}</div>`).join('');
+$('#dayFrames').innerHTML = DAY.map((d, i) => `<img class="${i ? '' : 'on'}" src="img/${d.img}.webp" data-winter="${d.img}" alt="${d.h}" loading="lazy">`).join('');
+$('#dayProg').innerHTML = DAY.map(() => '<i><b></b></i>').join('');
+$('#dmTrack').innerHTML = DAY.map(d => `<article class="dm-card"><img src="img/${d.img}.webp" data-winter="${d.img}" alt="${d.h}" loading="lazy"><div class="tx"><span class="day-time">${d.t}</span><h3>${d.h}</h3><p>${d.p}</p>${d.sound ? soundBtn() : ''}</div></article>`).join('');
+$('#dmDots').innerHTML = DAY.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('');
+
+/* ---------- smooth scroll + reveals ---------- */
+let lenis = null;
+if (window.gsap && !reduce) {
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.Lenis) {
+    lenis = new Lenis({ lerp: .1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  gsap.from('.hero h1 span', { yPercent: 110, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: .12, delay: .15 });
+  gsap.from('.hero-row', { opacity: 0, y: 20, duration: 1.1, delay: .7, ease: 'power3.out' });
+  gsap.to('.hero-media img', { scale: 1, duration: 2.6, ease: 'power2.out' });
+  gsap.to('.hero-media', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  $$('.reveal').forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } }));
+} else {
+  $$('.reveal').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
+}
+const goTo = sel => { const t = $(sel); if (!t) return; lenis ? lenis.scrollTo(t, { offset: -10 }) : t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); };
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.getAttribute('href'); if (h.length > 1 && $(h)) { e.preventDefault(); goTo(h); } }));
+
+/* ---------- nav: hide on scroll down, active section ---------- */
+(() => {
+  const nav = $('#nav'), mbar = $('#mbar'); let lastY = 0;
+  const onScroll = () => {
+    const y = scrollY;
+    nav.classList.toggle('solid', y > 60);
+    nav.classList.toggle('hide', y > innerHeight * .8 && y > lastY + 4);
+    if (y < lastY - 4) nav.classList.remove('hide');
+    mbar.classList.toggle('top', y < innerHeight * .5);
+    lastY = y;
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  const links = $$('.nav ul a');
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['territory', 'house', 'price', 'road'].forEach(id => io.observe($('#' + id)));
+})();
+
+/* ---------- day: desktop scroll ---------- */
+(() => {
+  const sec = $('#day'), stage = $('#dayStage'), steps = $$('.day-step'), frames = $$('#dayFrames img'), bars = $$('#dayProg b');
+  let cur = -1;
+  const set = i => {
+    if (i === cur) return; cur = i;
+    steps.forEach((s, k) => s.classList.toggle('on', k === i));
+    frames.forEach((f, k) => f.classList.toggle('on', k <= i));
+    stage.style.background = DAY[i].sky;
+  };
+  const tick = () => {
+    if (isMobile()) return;
+    const r = sec.getBoundingClientRect(), total = sec.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / total));
+    set(Math.min(DAY.length - 1, Math.floor(p * DAY.length)));
+    bars.forEach((b, k) => b.style.width = Math.min(100, Math.max(0, (p * DAY.length - k) * 100)) + '%');
+  };
+  addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick); set(0); tick();
+})();
+
+/* ---------- day: mobile carousel ---------- */
+(() => {
+  const tr = $('#dmTrack'), dots = $$('#dmDots i'), cards = $$('.dm-card', tr);
+  let idx = 0, touched = false, timer;
+  const upd = () => {
+    const c = tr.scrollLeft + tr.clientWidth / 2;
+    let best = 0, bd = 1e9;
+    cards.forEach((el, k) => { const m = el.offsetLeft + el.offsetWidth / 2, d = Math.abs(m - c); if (d < bd) { bd = d; best = k; } });
+    idx = best; dots.forEach((d, k) => d.classList.toggle('on', k === idx));
+  };
+  tr.addEventListener('scroll', upd, { passive: true });
+  ['touchstart', 'pointerdown'].forEach(ev => tr.addEventListener(ev, () => { touched = true; clearInterval(timer); }, { passive: true }));
+  const io = new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting && !touched && !reduce) timer = setInterval(() => {
+      const n = cards[(idx + 1) % cards.length];
+      tr.scrollTo({ left: n.offsetLeft - (tr.clientWidth - n.offsetWidth) / 2, behavior: 'smooth' });
+    }, 5000);
+  }, { threshold: .6 });
+  io.observe(tr);
+})();
+
+/* ---------- fireplace sound (generated, no file) ---------- */
+(() => {
+  let ctx = null, master = null, on = false, crackleTimer;
+  const start = () => {
+    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
+    const len = ctx.sampleRate * 4, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+    let last = 0; for (let i = 0; i < len; i++) { const w = Math.random() * 2 - 1; last = (last + .02 * w) / 1.02; d[i] = last * 3.2; }
+    const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 500;
+    const g = ctx.createGain(); g.gain.value = .55; src.connect(lp).connect(g).connect(master); src.start();
+    const pop = () => {
+      const n = ctx.createBufferSource(), b = ctx.createBuffer(1, 900, ctx.sampleRate), c = b.getChannelData(0);
+      for (let i = 0; i < 900; i++) c[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / 900, 6);
+      n.buffer = b; const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 1200 + Math.random() * 2500;
+      const pg = ctx.createGain(); pg.gain.value = .15 + Math.random() * .5; n.connect(hp).connect(pg).connect(master); n.start();
+      crackleTimer = setTimeout(pop, 60 + Math.random() * (Math.random() < .2 ? 900 : 260));
+    };
+    pop();
+    master.gain.linearRampToValueAtTime(.6, ctx.currentTime + 1.2);
+  };
+  const stop = () => { clearTimeout(crackleTimer); if (master) { master.gain.linearRampToValueAtTime(0, ctx.currentTime + .5); const m = master; setTimeout(() => m.disconnect(), 600); } };
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-sound]'); if (!b) return;
+    try { on = !on; on ? start() : stop(); } catch { on = false; }
+    $$('[data-sound]').forEach(x => { x.setAttribute('aria-pressed', on); x.textContent = on ? '🔥 Вимкнути звук' : '🔥 Увімкнути звук каміна'; });
+  });
+})();
+
+/* ---------- territory ---------- */
+(() => {
+  const P = {
+    pool:   { n: 'Басейн', t: 'Басейн з підігрівом', d: 'Відкритий басейн 5×10 м з підігрівом і підсвіткою. Працює в теплий сезон.', img: 'basejn', tag: 'Входить у вартість', x: 40, y: 68 },
+    kids:   { n: 'Дитячий басейн', t: 'Дитячий басейн', d: 'Невеликий неглибокий басейн поруч з основним — для найменших.', img: 'basejn', tag: 'Входить у вартість', x: 7, y: 70 },
+    chan:   { n: 'Чан', t: 'Оздоровчий чан', d: 'Гарячий чан на 6 осіб просто неба — найкраще після сауни або походу на Піп Іван.', img: 'chan', tag: '2500 грн за 2 години', paid: 1, x: 73, y: 64 },
+    swing:  { n: 'Гойдалка', t: 'Гойдалка з видом', d: 'Найкраще місце для ранкової кави: перед вами вся долина і хребти Чорногори.', img: 'gojdalka', tag: 'Входить у вартість', x: 69, y: 57 },
+    gazebo: { n: 'Альтанка', t: 'Альтанка з мангалом', d: 'Дерев\'яна альтанка з піччю і столом на всю компанію. В\'язка дров уже в ціні.', img: 'altanka', tag: 'Входить у вартість', x: 91, y: 58 },
+    hills:  { n: 'Гори', t: 'Вид на Чорногору', d: 'З території видно хребти, а стежки на Піп Іван, Вухатий Камінь і Менчул проходять зовсім поруч.', img: 'gojdalka', tag: 'Поруч', x: 41, y: 27 },
+    house:  { n: 'Будинок', t: 'Будинок', d: 'Двоповерховий зруб на 4 номери і 8 місць. Вітальня з каміном, кухня і тераса з видом на гори.', img: 'fasad', tag: 'Входить у вартість' },
+    sauna:  { n: 'Сауна', t: 'Сауна на дровах', d: 'Фінська сауна на 6 осіб у цоколі будинку, з кімнатою відпочинку.', img: 'sauna', tag: '2000 грн за 2 години', paid: 1 },
+  };
+  const map = $('#photomap'), chips = $('#terChips');
+  Object.entries(P).forEach(([k, v]) => {
+    chips.insertAdjacentHTML('beforeend', `<button type="button" class="chip" data-k="${k}" aria-pressed="false">${v.n}</button>`);
+    if (v.x != null) map.insertAdjacentHTML('beforeend', `<button type="button" class="spot" style="left:${v.x}%;top:${v.y}%" data-k="${k}" aria-pressed="false" aria-label="${v.n}"><i></i><em>${v.n}</em></button>`);
+  });
+  const img = $('#terImg'), ti = $('#terTitle'), tx = $('#terText'), tag = $('#terTag');
+  const show = (k, scroll) => {
+    const v = P[k];
+    $$('[data-k]').forEach(s => s.setAttribute('aria-pressed', s.dataset.k === k));
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = `img/${v.img}.webp`; img.alt = v.t; ti.textContent = v.t; tx.textContent = v.d; tag.textContent = v.tag;
+      tag.classList.toggle('paid', !!v.paid);
+      const done = () => img.style.opacity = 1; img.complete ? done() : img.onload = done;
+    }, reduce ? 0 : 180);
+    if (scroll && isMobile()) { const c = $(`.chip[data-k="${k}"]`); c.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' }); }
+  };
+  $$('[data-k]').forEach(s => s.addEventListener('click', () => show(s.dataset.k, true)));
+  show('pool');
+})();
+
+/* ---------- reviews ---------- */
+(() => {
+  const tr = $('#revTrack'), rt = $('#rating');
+  if (CONFIG.reviews.length) {
+    tr.innerHTML = CONFIG.reviews.map(r => `<article class="rev"><span class="stars" aria-label="5 з 5">★★★★★</span><p>«${r.text}»</p><span class="who">${r.name}${r.when ? ' · ' + r.when : ''}</span></article>`).join('');
+  } else {
+    tr.innerHTML = [1, 2, 3].map(() => `<article class="rev ph"><span class="draft">Чернетка</span><p>Тут буде справжній відгук гостя з Google чи karpaty.info</p><span class="who">Ім'я гостя · місяць поїздки</span></article>`).join('');
+  }
+  rt.innerHTML = (CONFIG.rating ? `<b>${CONFIG.rating.score}</b><div><span class="stars" style="color:var(--honey)">★★★★★</span><div class="muted small">${CONFIG.rating.count} відгуків у Google</div></div>` : '') +
+    `<a class="btn ghost" href="${CONFIG.googleReviewsUrl}" target="_blank" rel="noopener">Відгуки в Google</a>`;
+})();
+
+/* ---------- floors ---------- */
+$$('.floors button').forEach(b => b.addEventListener('click', () => {
+  $$('.floors button').forEach(x => x.setAttribute('aria-selected', x === b));
+  $$('.floor-panel').forEach(p => { const on = p.dataset.panel === b.dataset.floor; p.hidden = !on; if (on) { p.classList.remove('fade-in'); void p.offsetWidth; p.classList.add('fade-in'); initGals(p); } });
+  if (window.ScrollTrigger) ScrollTrigger.refresh();
+}));
+
+/* ---------- galleries + lightbox ---------- */
+const lb = $('#lb'), lbImg = $('img', lb); let lbList = [], lbI = 0;
+const lbShow = () => { lbImg.src = lbList[lbI].src; lbImg.alt = lbList[lbI].alt; $('.lc', lb).textContent = `${lbI + 1} / ${lbList.length}`; $('.pv', lb).hidden = $('.nx', lb).hidden = lbList.length < 2; };
+const lbOpen = (list, i) => { lbList = list; lbI = i; lbShow(); lb.classList.add('open'); $('.x', lb).focus(); };
+const lbStep = d => { lbI = (lbI + d + lbList.length) % lbList.length; lbShow(); };
+const lbClose = () => lb.classList.remove('open');
+$('.x', lb).onclick = lbClose; $('.pv', lb).onclick = () => lbStep(-1); $('.nx', lb).onclick = () => lbStep(1);
+lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
+let tx0 = null; lb.addEventListener('touchstart', e => tx0 = e.touches[0].clientX, { passive: true });
+lb.addEventListener('touchend', e => { if (tx0 == null) return; const dx = e.changedTouches[0].clientX - tx0; if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1); tx0 = null; });
+addEventListener('keydown', e => { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') lbClose(); if (e.key === 'ArrowRight') lbStep(1); if (e.key === 'ArrowLeft') lbStep(-1); });
+
+function initGals(root = document) {
+  $$('.gal', root).forEach(g => {
+    if (g.dataset.ready) return; g.dataset.ready = 1;
+    const sh = $('.shots', g), imgs = $$('img', sh);
+    imgs.forEach((im, i) => im.addEventListener('click', () => lbOpen(imgs, i)));
+    if (imgs.length < 2) return;
+    g.insertAdjacentHTML('beforeend', `<span class="count">1 / ${imgs.length}</span><div class="dots">${imgs.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div><button type="button" class="arr prev" aria-label="Попереднє фото" disabled>←</button><button type="button" class="arr next" aria-label="Наступне фото">→</button>`);
+    const cnt = $('.count', g), ds = $$('.dots i', g), pv = $('.prev', g), nx = $('.next', g);
+    const cur = () => { let b = 0, bd = 1e9; imgs.forEach((im, k) => { const d = Math.abs(im.offsetLeft - sh.scrollLeft); if (d < bd) { bd = d; b = k; } }); return b; };
+    const upd = () => { const i = cur(); cnt.textContent = `${i + 1} / ${imgs.length}`; ds.forEach((d, k) => d.classList.toggle('on', k === i)); pv.disabled = i === 0; nx.disabled = i === imgs.length - 1; };
+    sh.addEventListener('scroll', upd, { passive: true });
+    const go = d => { const i = Math.max(0, Math.min(imgs.length - 1, cur() + d)); sh.scrollTo({ left: imgs[i].offsetLeft }); };
+    pv.onclick = () => go(-1); nx.onclick = () => go(1);
+  });
+}
+initGals();
+
+/* ---------- calculator ---------- */
+const RATES = { 1: [4000, 5000], 2: [7000, 8000], 3: [9000, 10500], 4: [10000, 12000] };
+const EX = { sauna: 2000, chan: 2500, bed: 700 };
+const MONTHS = ['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+const MONTHS_N = ['січень','лютий','березень','квітень','травень','червень','липень','серпень','вересень','жовтень','листопад','грудень'];
+const today = new Date(); today.setHours(0, 0, 0, 0);
+const addD = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+const same = (a, b) => a.getTime() === b.getTime();
+const isWE = d => [5, 6, 0].includes(d.getDay());
+const isHol = d => { const m = d.getMonth(), day = d.getDate(); return (m === 11 && day >= 24) || (m === 0 && day <= 8); };
+const fmt = n => n.toLocaleString('uk-UA').replace(/[\s,]/g, ' ') + ' грн';
+const dd = d => `${d.getDate()} ${MONTHS[d.getMonth()]}`;
+const nw = n => n % 10 === 1 && n % 100 !== 11 ? 'ніч' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) ? 'ночі' : 'ночей';
+const nextFri = () => { const d = addD(today, ((5 - today.getDay() + 7) % 7) || 7); return d; };
+const yr = (m, day) => { let d = new Date(today.getFullYear(), m, day); if (d < today) d = new Date(today.getFullYear() + 1, m, day); return d; };
+
+const st = { start: nextFri(), nights: 2, adults: 4, kids: 0, rooms: 2, manual: false, sauna: 0, chan: 0 };
+const roomsFor = a => Math.min(4, Math.max(1, Math.ceil(a / 2)));
+
+/* date chips */
+const CHIPS = [
+  { n: 'Найближчі вихідні', s: () => nextFri(), k: 2 },
+  { n: 'Різдво', s: () => yr(11, 24), k: 2 },
+  { n: 'Новий рік', s: () => yr(11, 30), k: 3 },
+  { n: 'Зимові канікули', s: () => yr(0, 2), k: 4 },
+];
+$('#dateChips').innerHTML = CHIPS.map((c, i) => `<button type="button" class="chip" data-c="${i}" aria-pressed="${i === 0}">${c.n}</button>`).join('');
+$$('#dateChips .chip').forEach(b => b.addEventListener('click', () => {
+  const c = CHIPS[+b.dataset.c]; st.start = c.s(); st.nights = c.k; calMonth = new Date(st.start.getFullYear(), st.start.getMonth(), 1);
+  $$('#dateChips .chip').forEach(x => x.setAttribute('aria-pressed', x === b)); render();
+}));
+
+/* calendar */
+let calMonth = new Date(st.start.getFullYear(), st.start.getMonth(), 1), picking = 'in';
+const cal = $('#cal'), dateBtn = $('#dateBtn');
+dateBtn.addEventListener('click', () => { const o = cal.hidden; cal.hidden = !o; dateBtn.setAttribute('aria-expanded', o); picking = 'in'; drawCal(); if (window.ScrollTrigger) ScrollTrigger.refresh(); });
+$('#calPrev').onclick = () => { calMonth.setMonth(calMonth.getMonth() - 1); drawCal(); };
+$('#calNext').onclick = () => { calMonth.setMonth(calMonth.getMonth() + 1); drawCal(); };
+function drawCal() {
+  $('#calTitle').textContent = `${MONTHS_N[calMonth.getMonth()]} ${calMonth.getFullYear()}`;
+  $('#calPrev').disabled = calMonth <= new Date(today.getFullYear(), today.getMonth(), 1);
+  const end = addD(st.start, st.nights);
+  const first = (calMonth.getDay() + 6) % 7, days = new Date(calMonth.getFullYear(), calMonth.getMonth() + 1, 0).getDate();
+  let h = ['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map((d, i) => `<span class="dw${i >= 4 ? ' we' : ''}">${d}</span>`).join('');
+  h += '<span></span>'.repeat(first);
+  for (let i = 1; i <= days; i++) {
+    const d = new Date(calMonth.getFullYear(), calMonth.getMonth(), i);
+    const cls = [isWE(d) ? 'we' : '', isHol(d) ? 'hol' : '', (same(d, st.start) || same(d, end)) ? 'edge' : (d > st.start && d < end ? 'in' : '')].join(' ');
+    h += `<button type="button" class="${cls}" data-t="${d.getTime()}" ${d < today ? 'disabled' : ''} aria-label="${dd(d)}">${i}</button>`;
+  }
+  $('#calGrid').innerHTML = h;
+  $('#calHint').textContent = picking === 'in' ? 'Оберіть дату заїзду. Помаранчеві дні — вихідні, крапка — свята.' : 'Тепер оберіть дату виїзду (мінімум 2 ночі)';
+  $$('#calGrid button').forEach(b => b.addEventListener('click', () => {
+    const d = new Date(+b.dataset.t);
+    if (picking === 'in') { st.start = d; st.nights = Math.max(2, st.nights); picking = 'out'; }
+    else { const n = Math.round((d - st.start) / 864e5); if (n <= 0) { st.start = d; return drawCal(); } st.nights = Math.max(2, Math.min(30, n)); picking = 'in'; cal.hidden = true; dateBtn.setAttribute('aria-expanded', false); }
+    $$('#dateChips .chip').forEach(x => x.setAttribute('aria-pressed', false));
+    render();
+  }));
+}
+
+/* guests, rooms, extras */
+$$('[data-g]').forEach(b => b.addEventListener('click', () => {
+  const k = b.dataset.g; st[k] = Math.max(k === 'adults' ? 1 : 0, Math.min(k === 'adults' ? 12 : 6, st[k] + +b.dataset.d));
+  if (!st.manual) st.rooms = roomsFor(st.adults); render();
+}));
+$$('.seg button').forEach(b => b.addEventListener('click', () => { st.rooms = +b.dataset.r; st.manual = true; render(); }));
+$('#autoNote').addEventListener('click', e => { if (e.target.closest('button')) { st.manual = false; st.rooms = roomsFor(st.adults); render(); } });
+$$('[data-x]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.x; st[k] = Math.max(0, Math.min(10, st[k] + +b.dataset.d)); render(); }));
+
+let lastMsg = '';
+function render() {
+  const end = addD(st.start, st.nights);
+  let wk = 0, we = 0, hol = false;
+  for (let i = 0; i < st.nights; i++) { const d = addD(st.start, i); isWE(d) ? we++ : wk++; if (isHol(d)) hol = true; }
+  const [pw, pe] = RATES[st.rooms];
+  const beds = Math.max(0, st.adults - st.rooms * 2);
+  const stay = wk * pw + we * pe, extras = st.sauna * EX.sauna + st.chan * EX.chan + beds * EX.bed * st.nights, total = stay + extras;
+  const guests = st.adults + st.kids;
+
+  $('#dateTxt').innerHTML = `${dd(st.start)} — ${dd(end)}<small>${st.nights} ${nw(st.nights)} · заїзд з 14:00</small>`;
+  $('#rDates').textContent = `${dd(st.start)} — ${dd(end)} · ${st.nights} ${nw(st.nights)} · ${guests} ${guests === 1 ? 'гість' : guests < 5 ? 'гості' : 'гостей'}`;
+  const tot = $('#rTotal');
+  if (hol) { tot.textContent = 'Свята — ціна за домовленістю'; tot.classList.add('hol'); $('#rPer').innerHTML = `<span>За звичайним тарифом було б ${fmt(total)}</span>`; }
+  else { tot.textContent = fmt(total); tot.classList.remove('hol'); $('#rPer').innerHTML = `≈ ${fmt(Math.round(total / st.adults / st.nights))} <span>з дорослого за ніч</span>`; }
+
+  const L = [];
+  if (wk) L.push([`Будні × ${wk}`, fmt(wk * pw)]);
+  if (we) L.push([`Вихідні × ${we}`, fmt(we * pe)]);
+  if (beds) L.push([`Дод. місце × ${beds}`, fmt(beds * EX.bed * st.nights)]);
+  if (st.sauna) L.push([`Сауна × ${st.sauna}`, fmt(st.sauna * EX.sauna)]);
+  if (st.chan) L.push([`Чан × ${st.chan}`, fmt(st.chan * EX.chan)]);
+  if (st.kids) L.push([`Діти до 7 × ${st.kids}`, 'безкоштовно']);
+  $('#rLines').innerHTML = L.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('');
+
+  const tip = $('#rTip');
+  tip.hidden = st.rooms === 4 || hol;
+  tip.textContent = 'Компанією 7–8 осіб весь будинок виходить найвигідніше — від 1 250 грн з людини за ніч у будні.';
+
+  $$('.seg button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.r === st.rooms));
+  $('#autoNote').innerHTML = st.manual ? `Номери обрано вручну. <button type="button">Підібрати автоматично</button>` : `Підібрали ${st.rooms === 4 ? 'весь будинок' : st.rooms + ' ' + (st.rooms === 1 ? 'номер' : 'номери')} для ${st.adults} ${st.adults === 1 ? 'дорослого' : 'дорослих'}. Можна змінити.`;
+  const warn = $('#warn'), maxBeds = Math.min(4, st.rooms);
+  warn.hidden = beds <= maxBeds;
+  warn.textContent = `Для ${st.adults} дорослих замало місць у ${st.rooms} ${st.rooms === 1 ? 'номері' : 'номерах'} — оберіть більше номерів або уточніть у господарів.`;
+
+  ['adults', 'kids'].forEach(k => $('#g-' + k).textContent = st[k]);
+  ['sauna', 'chan'].forEach(k => $('#x-' + k).textContent = st[k]);
+  $$('[data-g="adults"][data-d="-1"]')[0].disabled = st.adults <= 1;
+  $$('[data-g="kids"][data-d="-1"]')[0].disabled = st.kids <= 0;
+  $$('[data-x]').forEach(b => { if (b.dataset.d === '-1') b.disabled = st[b.dataset.x] <= 0; });
+
+  lastMsg = `Добрий день! Хочу забронювати Intermezzo: ${dd(st.start)} — ${dd(end)} (${st.nights} ${nw(st.nights)}), ` +
+    `${st.adults} дорослих${st.kids ? ` і ${st.kids} дит. до 7 р.` : ''}, ${st.rooms === 4 ? 'весь будинок' : st.rooms + ' ном.'}` +
+    (st.sauna ? `, сауна × ${st.sauna}` : '') + (st.chan ? `, чан × ${st.chan}` : '') +
+    (hol ? '. Це святкові дати — підкажіть, будь ласка, ціну.' : `. За калькулятором на сайті — ${fmt(total)}.`) + ' Чи вільні ці дати?';
+  if (!cal.hidden) drawCal();
+}
+
+/* ---------- messengers ---------- */
+const ICON = { tg: ['#2aabee', '✈'], wa: ['#25d366', '✆'], vb: ['#7360f2', '☎'], tel: ['#d9a35b', '✆'] };
+const channels = () => [
+  CONFIG.telegram && { k: 'tg', n: 'Telegram', s: 'Повідомлення вже написане', href: `https://t.me/${CONFIG.telegram}?text=${encodeURIComponent(lastMsg)}` },
+  CONFIG.whatsapp && { k: 'wa', n: 'WhatsApp', s: 'Повідомлення вже написане', href: `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(lastMsg)}` },
+  CONFIG.viber && { k: 'vb', n: 'Viber', s: 'Текст скопіюється — вставте в чат', href: `viber://chat?number=${encodeURIComponent(CONFIG.viber)}`, copy: true },
+  { k: 'tel', n: 'Подзвонити', s: '+38 050 814 44 98', href: `tel:${CONFIG.phone}` },
+].filter(Boolean);
+const copyMsg = async el => { try { await navigator.clipboard.writeText(lastMsg); el.textContent = 'Текст запиту скопійовано — вставте його в чат Viber.'; } catch { el.textContent = lastMsg; } };
+function drawSend() {
+  const ch = channels().filter(c => c.k !== 'tel');
+  $('#sendBtns').innerHTML = `<a class="btn dark" href="tel:${CONFIG.phone}">Подзвонити й забронювати</a><div class="send-row">${ch.map(c => `<a class="btn line" href="${c.href}" target="_blank" rel="noopener" data-ch="${c.k}">${c.n}</a>`).join('')}</div>`;
+  $$('#sendBtns [data-ch]').forEach(a => a.addEventListener('click', () => { a.href = channels().find(c => c.k === a.dataset.ch).href; if (a.dataset.ch === 'vb') copyMsg($('#toast')); }));
+}
+const sheet = $('#contactSheet');
+function openSheet() {
+  $('#csGrid').innerHTML = channels().map(c => `<a class="mbtn" href="${c.href}" ${c.k === 'tel' ? '' : 'target="_blank" rel="noopener"'} data-ch="${c.k}"><i style="background:${ICON[c.k][0]}">${ICON[c.k][1]}</i><span>${c.n}<small>${c.s}</small></span></a>`).join('');
+  $('#csToast').textContent = '';
+  $$('#csGrid [data-ch="vb"]').forEach(a => a.addEventListener('click', () => copyMsg($('#csToast'))));
+  sheet.classList.add('open'); $('.x', sheet).focus();
+}
+document.addEventListener('click', e => { if (e.target.closest('[data-open="contact"]')) openSheet(); });
+sheet.addEventListener('click', e => { if (e.target === sheet || e.target.closest('[data-close]')) sheet.classList.remove('open'); });
+addEventListener('keydown', e => { if (e.key === 'Escape') sheet.classList.remove('open'); });
+
+/* ---------- config-driven blocks ---------- */
+if (CONFIG.urgency) { const u = $('#urgent'); u.textContent = CONFIG.urgency; u.hidden = false; }
+if (CONFIG.borderFormUrl) { const f = $('#formLink'); f.href = CONFIG.borderFormUrl; f.target = '_blank'; f.hidden = false; }
+
+/* ---------- summer / winter ---------- */
+(() => {
+  const W = CONFIG.winterImages; if (!Object.keys(W).length) return;
+  const sw = $('#season'); sw.hidden = false;
+  const set = s => {
+    $$('#season button').forEach(b => b.setAttribute('aria-pressed', b.dataset.s === s));
+    $$('[data-winter]').forEach(im => { const k = im.dataset.winter; im.src = s === 'winter' && W[k] ? W[k] : `img/${k}.webp`; });
+  };
+  $$('#season button').forEach(b => b.addEventListener('click', () => set(b.dataset.s)));
+  const m = today.getMonth(); if (m === 11 || m <= 2) set('winter');
+})();
+
+render(); drawSend();
+</script>
+</body>
+</html>
