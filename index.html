@@ -39,7 +39,7 @@ h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
 
 /* ---------- nav ---------- */
 .nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px var(--pad);transition:background .4s,transform .45s cubic-bezier(.2,.8,.2,1)}
-.nav.solid{background:rgba(15,28,24,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav.solid{background:rgba(15,28,24,.94)}
 .nav.hide{transform:translateY(-110%)}
 .brand{font:400 26px/1 var(--display);text-decoration:none}
 .nav ul{display:flex;gap:6px;list-style:none;font-size:15px}
@@ -57,7 +57,7 @@ h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
 /* ---------- hero ---------- */
 .hero{position:relative;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end}
 .hero-media{position:absolute;inset:0}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover}
 .hero-media video{position:absolute;inset:0;opacity:0;transition:opacity 1s}
 .hero-media video.ready{opacity:1}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,24,.4) 0%,rgba(15,28,24,0) 28%,rgba(15,28,24,.2) 50%,var(--night) 100%)}
@@ -93,7 +93,7 @@ h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
 
 /* ---------- day: desktop ---------- */
 .day{height:360vh}
-.day-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(300px,.8fr) 1.2fr;align-items:center;gap:clamp(24px,4vw,64px);padding:90px var(--pad) 40px;transition:background 1.2s ease}
+.day-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(300px,.8fr) 1.2fr;align-items:center;gap:clamp(24px,4vw,64px);padding:90px var(--pad) 40px}
 .day-text{position:relative;min-height:320px}
 .day-step{position:absolute;inset:auto 0 0 0;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;pointer-events:none}
 .day-step.on{opacity:1;transform:none;pointer-events:auto}
@@ -101,8 +101,8 @@ h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
 .day-step h3{margin-bottom:12px}
 .day-step p{max-width:38ch;color:rgba(235,230,219,.88)}
 .day-frames{position:relative;height:min(72svh,640px);border-radius:28px;overflow:hidden}
-.day-frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1),transform 6s linear;transform:scale(1.08)}
-.day-frames img.on{clip-path:inset(0 0 0 0);transform:scale(1)}
+.day-frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
+.day-frames img.on{opacity:1}
 .day-progress{position:absolute;left:var(--pad);bottom:32px;display:flex;gap:8px}
 .day-progress i{width:36px;height:3px;background:rgba(235,230,219,.25);overflow:hidden;border-radius:2px}
 .day-progress b{display:block;height:100%;width:0;background:var(--honey);transition:width .4s}
@@ -176,11 +176,11 @@ h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
 .shots img{flex:0 0 91%;width:91%;height:100%;object-fit:cover;scroll-snap-align:start;cursor:zoom-in}
 .shots img:last-child{flex-basis:100%;width:100%}
 .shots:has(img:only-child) img{flex-basis:100%}
-.count{position:absolute;top:12px;right:12px;padding:5px 11px;border-radius:999px;background:rgba(15,28,24,.72);backdrop-filter:blur(8px);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.count{position:absolute;top:12px;right:12px;padding:5px 11px;border-radius:999px;background:rgba(15,28,24,.82);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
 .gal .dots{position:absolute;left:0;right:0;bottom:12px;margin:0;pointer-events:none}
 .gal .dots i{background:rgba(255,255,255,.45)}
 .gal .dots i.on{background:#fff}
-.arr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(15,28,24,.72);backdrop-filter:blur(8px);display:grid;place-items:center;opacity:0;transition:opacity .25s;font-size:20px}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(15,28,24,.82);display:grid;place-items:center;opacity:0;transition:opacity .25s;font-size:20px}
 .arr.prev{left:12px}.arr.next{right:12px}
 .gal:hover .arr{opacity:1}
 .arr:disabled{opacity:0!important}
@@ -308,15 +308,15 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
 .foot-meta{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:60px;font-size:14px;color:var(--stone)}
 
 /* ---------- mobile bar ---------- */
-.mbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:none;grid-template-columns:1.1fr 1fr 1fr;gap:6px;padding:6px;border-radius:20px;background:rgba(15,28,24,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 40px rgba(0,0,0,.45);transition:background .4s}
-.mbar.top{background:rgba(15,28,24,.35)}
+.mbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:none;grid-template-columns:1.1fr 1fr 1fr;gap:6px;padding:6px;border-radius:20px;background:rgba(15,28,24,.96);box-shadow:0 6px 20px rgba(0,0,0,.4);transition:background .4s}
+.mbar.top{background:rgba(15,28,24,.7)}
 .mbar a,.mbar button{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:52px;justify-content:center;border-radius:14px;text-decoration:none;font-size:13px;font-weight:700}
 .mbar .main{background:var(--honey);color:#1d1408}
 .mbar svg{width:20px;height:20px}
 @media(max-width:860px){.mbar{display:grid}.foot{padding-bottom:150px}}
 
 /* ---------- sheets ---------- */
-.sheet{position:fixed;inset:0;z-index:90;display:none;background:rgba(5,10,8,.6);backdrop-filter:blur(4px)}
+.sheet{position:fixed;inset:0;z-index:90;display:none;background:rgba(5,10,8,.75)}
 .sheet.open{display:block}
 .sheet-in{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:min(440px,calc(100% - 24px));background:var(--resin);border-radius:28px;padding:26px;animation:up .35s cubic-bezier(.2,.8,.2,1)}
 @keyframes up{from{transform:translate(-50%,30px);opacity:0}}
@@ -388,7 +388,14 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
 .lb .lc{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:14px;color:var(--stone);font-variant-numeric:tabular-nums}
 @media(max-width:700px){.lb .pv,.lb .nx{top:auto;bottom:12px;transform:none}}
 
-.reveal{opacity:0;transform:translateY(30px)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.hero h1 span{animation:rise 1.2s cubic-bezier(.16,1,.3,1) both}
+.hero h1 span+span{animation-delay:.1s}
+.tagline,.hero-row{animation:fade 1s .5s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(60%)}}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -479,7 +486,7 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
     <div class="chips" id="terChips" role="group" aria-label="Місця на території"></div>
     <div class="ter-grid">
       <div class="photomap reveal" id="photomap">
-        <img src="img/basejn-ranok.webp" data-winter="basejn-ranok" alt="Територія садиби: басейн, чан і гори" loading="lazy">
+        <img src="img/basejn-ranok.webp" data-winter="basejn-ranok" alt="Територія садиби: басейн, чан і гори" loading="lazy" decoding="async">
       </div>
       <article class="ter-card reveal" aria-live="polite">
         <div class="ph"><img id="terImg" src="img/basejn.webp" alt=""></div>
@@ -503,9 +510,9 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
       <a href="#price" class="btn" style="margin-top:28px">Порахувати зимовий відпочинок</a>
     </div>
     <div class="winter-photos">
-      <img class="w-a reveal" src="img/zyma-budynok.webp" alt="Будинок Intermezzo взимку під снігом" loading="lazy">
-      <img class="w-b reveal" src="img/zyma-snig.webp" alt="Гості граються зі снігом увечері біля будинку" loading="lazy">
-      <img class="w-c reveal" src="img/zyma-snizhynka.webp" alt="Пряник-сніжинка на ялинці у вітальні" loading="lazy">
+      <img class="w-a reveal" src="img/zyma-budynok.webp" alt="Будинок Intermezzo взимку під снігом" loading="lazy" decoding="async">
+      <img class="w-b reveal" src="img/zyma-snig.webp" alt="Гості граються зі снігом увечері біля будинку" loading="lazy" decoding="async">
+      <img class="w-c reveal" src="img/zyma-snizhynka.webp" alt="Пряник-сніжинка на ялинці у вітальні" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -531,25 +538,25 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
       <button role="tab" aria-selected="false" data-floor="2">2 поверх</button>
     </div>
     <div class="floor-panel" data-panel="0" hidden><div class="rooms">
-      <article class="room"><div class="gal"><div class="shots"><img src="img/sauna.webp" alt="Сауна на дровах" loading="lazy"><img src="img/sauna-kimnata.webp" alt="Кімната відпочинку біля сауни з виходом надвір" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/sauna.webp" alt="Сауна на дровах" loading="lazy" decoding="async"><img src="img/sauna-kimnata.webp" alt="Кімната відпочинку біля сауни з виходом надвір" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Сауна з кімнатою відпочинку</h3><span class="cap">До 6 осіб · 2000 грн за 2 години</span><ul><li>Фінська сауна на дровах</li><li>Кімната відпочинку зі столом і виходом надвір</li><li>Рушники, халати й віник надаються</li></ul></div></article>
     </div></div>
     <div class="floor-panel" data-panel="1"><div class="rooms">
-      <article class="room"><div class="gal"><div class="shots"><img src="img/vitalnia.webp" alt="Вітальня з каміном" loading="lazy"><img src="img/vitalnia-skhody.webp" alt="Вітальня і сходи на другий поверх" loading="lazy"><img src="img/obidnia.webp" alt="Обідня зона" loading="lazy"><img src="img/kukhnia.webp" alt="Кухня" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/vitalnia.webp" alt="Вітальня з каміном" loading="lazy" decoding="async"><img src="img/vitalnia-skhody.webp" alt="Вітальня і сходи на другий поверх" loading="lazy" decoding="async"><img src="img/obidnia.webp" alt="Обідня зона" loading="lazy" decoding="async"><img src="img/kukhnia.webp" alt="Кухня" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Вітальня й кухня</h3><span class="cap">Спільна зона</span><ul><li>Камін, м'які меблі, телевізор</li><li>Обідній стіл на всю компанію</li><li>Електроплита, холодильник, мікрохвильовка, електрочайник, посуд, мийка</li><li>Вихід на терасу з кухні</li></ul></div></article>
-      <article class="room"><div class="gal"><div class="shots"><img src="img/terasa.webp" alt="Тераса з шезлонгами і столом" loading="lazy"><img src="img/terasa-basejn.webp" alt="Вид з тераси на басейн і гори" loading="lazy"><img src="img/balkon.webp" alt="Шезлонги на терасі над басейном" loading="lazy"><img src="img/terasa-svitanok.webp" alt="Тераса на світанку" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/terasa.webp" alt="Тераса з шезлонгами і столом" loading="lazy" decoding="async"><img src="img/terasa-basejn.webp" alt="Вид з тераси на басейн і гори" loading="lazy" decoding="async"><img src="img/balkon.webp" alt="Шезлонги на терасі над басейном" loading="lazy" decoding="async"><img src="img/terasa-svitanok.webp" alt="Тераса на світанку" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Тераса</h3><span class="cap">На рівні вітальні й кухні</span><ul><li>Простора тераса з видом на гори й басейн</li><li>Шезлонги, стіл і садові меблі</li><li>Найкраще місце для ранкової кави</li></ul></div></article>
-      <article class="room"><div class="gal"><div class="shots"><img src="img/pryhozha.webp" alt="Прихожа з лавою і дзеркалом" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/pryhozha.webp" alt="Прихожа з лавою і дзеркалом" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Прихожа</h3><span class="cap">Головний вхід у будинок</span><ul><li>Вішаки, лава й місце для сушіння речей і лиж</li><li>Другий вхід — через кухню з тераси</li></ul></div></article>
-      <article class="room"><div class="gal"><div class="shots"><img src="img/a-2.webp" alt="Люкс, двоспальне ліжко" loading="lazy"><img src="img/a-1.webp" alt="Зона відпочинку в люксі" loading="lazy"><img src="img/a-3.webp" alt="Шафа в люксі" loading="lazy"><img src="img/a-4.webp" alt="Санвузол люксу" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/a-2.webp" alt="Люкс, двоспальне ліжко" loading="lazy" decoding="async"><img src="img/a-1.webp" alt="Зона відпочинку в люксі" loading="lazy" decoding="async"><img src="img/a-3.webp" alt="Шафа в люксі" loading="lazy" decoding="async"><img src="img/a-4.webp" alt="Санвузол люксу" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Люкс</h3><span class="cap">2 гостей + розкладний диван</span><ul><li>Двоспальне ліжко і розкладний диван</li><li>Шафа, стіл зі стільцями, Smart TV</li><li>Власна ванна кімната з душовою кабіною</li></ul></div></article>
     </div></div>
     <div class="floor-panel" data-panel="2" hidden><div class="rooms">
-      <article class="room"><div class="gal"><div class="shots"><img src="img/b-1.webp" alt="Двомісний номер" loading="lazy"><img src="img/b-2.webp" alt="Вихід на балкон" loading="lazy"><img src="img/b-3.webp" alt="Санвузол" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/b-1.webp" alt="Двомісний номер" loading="lazy" decoding="async"><img src="img/b-2.webp" alt="Вихід на балкон" loading="lazy" decoding="async"><img src="img/b-3.webp" alt="Санвузол" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Двомісний</h3><span class="cap">2 гостей · власний балкон</span><ul><li>Двоспальне ліжко, комод, вішалка</li><li>Smart TV</li><li>Власна ванна кімната з душовою кабіною</li></ul></div></article>
-      <article class="room"><div class="gal"><div class="shots"><img src="img/c-2.webp" alt="Двоярусне ліжко" loading="lazy"><img src="img/c-1.webp" alt="Двоспальне ліжко" loading="lazy"><img src="img/c-3.webp" alt="Санвузол" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/c-2.webp" alt="Двоярусне ліжко" loading="lazy" decoding="async"><img src="img/c-1.webp" alt="Двоспальне ліжко" loading="lazy" decoding="async"><img src="img/c-3.webp" alt="Санвузол" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Двомісний плюс</h3><span class="cap">2 + 2 гостей · зручно з дітьми · власний балкон</span><ul><li>Двоспальне і двоярусне ліжка, шафа</li><li>Smart TV</li><li>Власна ванна кімната з душовою кабіною</li></ul></div></article>
-      <article class="room"><div class="gal"><div class="shots"><img src="img/d-2.webp" alt="Люкс на другому поверсі" loading="lazy"><img src="img/d-1.webp" alt="Диван і крісла" loading="lazy"><img src="img/d-3.webp" alt="Вихід на балкон" loading="lazy"><img src="img/d-4.webp" alt="Санвузол" loading="lazy"></div></div>
+      <article class="room"><div class="gal"><div class="shots"><img src="img/d-2.webp" alt="Люкс на другому поверсі" loading="lazy" decoding="async"><img src="img/d-1.webp" alt="Диван і крісла" loading="lazy" decoding="async"><img src="img/d-3.webp" alt="Вихід на балкон" loading="lazy" decoding="async"><img src="img/d-4.webp" alt="Санвузол" loading="lazy" decoding="async"></div></div>
         <div class="tx"><h3>Люкс</h3><span class="cap">2 гостей + розкладний диван · власний балкон</span><ul><li>Двоспальне ліжко і розкладний диван</li><li>Шафа, стіл зі стільцями, Smart TV</li><li>Власна ванна кімната з душовою кабіною</li></ul></div></article>
     </div></div>
     <p class="muted small" style="margin-top:28px">У кожній ванній кімнаті: душова кабіна, умивальник, туалет, фен, рушники й засоби гігієни. <a href="https://maps.app.goo.gl/7FRZ2gowz24cJ1EM6" target="_blank" rel="noopener" style="color:var(--honey)">3D-тур садибою в Google Maps</a></p>
@@ -772,7 +779,7 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
 </section>
 
 <footer class="foot" id="contacts">
-  <div class="foot-bg"><img src="img/basejn-nich-2.webp" alt="" loading="lazy"></div>
+  <div class="foot-bg"><img src="img/basejn-nich-2.webp" alt="" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <h2 class="reveal">Час сповільнитися. Оберіть дати</h2>
     <a class="tel" href="tel:+380508144498">+38 050 814 44 98</a>
@@ -814,9 +821,6 @@ details p{padding:0 0 24px;color:var(--stone);max-width:62ch}
   <span class="lc"></span>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 /* =====================================================
    НАЛАШТУВАННЯ — заповнити, коли дасть власник
@@ -857,30 +861,15 @@ const DAY = [
   { t: '21:00', h: 'Вечір біля каміна', p: 'Затишна лаунж-зона з каміном і великим столом на всю компанію. Кухня поруч — готуйте самі й нікуди не поспішайте.', img: 'vitalnia', sky: 'linear-gradient(180deg,#24180d 0%,#0f1c18 100%)' },
 ];
 $('#dayText').innerHTML = DAY.map((d, i) => `<div class="day-step${i ? '' : ' on'}"><span class="day-time">${d.t}</span><h3>${d.h}</h3><p>${d.p}</p></div>`).join('');
-$('#dayFrames').innerHTML = DAY.map((d, i) => `<img class="${i ? '' : 'on'}" src="img/${d.img}.webp" data-winter="${d.img}" alt="${d.h}" loading="lazy">`).join('');
+$('#dayFrames').innerHTML = DAY.map((d, i) => `<img class="${i ? '' : 'on'}" src="img/${d.img}.webp" data-winter="${d.img}" alt="${d.h}" loading="lazy" decoding="async">`).join('');
 $('#dayProg').innerHTML = DAY.map(() => '<i><b></b></i>').join('');
-$('#dmTrack').innerHTML = DAY.map(d => `<article class="dm-card"><img src="img/${d.img}.webp" data-winter="${d.img}" alt="${d.h}" loading="lazy"><div class="tx"><span class="day-time">${d.t}</span><h3>${d.h}</h3><p>${d.p}</p></div></article>`).join('');
+$('#dmTrack').innerHTML = DAY.map(d => `<article class="dm-card"><img src="img/${d.img}.webp" data-winter="${d.img}" alt="${d.h}" loading="lazy" decoding="async"><div class="tx"><span class="day-time">${d.t}</span><h3>${d.h}</h3><p>${d.p}</p></div></article>`).join('');
 $('#dmDots').innerHTML = DAY.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('');
 
 /* ---------- smooth scroll + reveals ---------- */
-let lenis = null;
-if (window.gsap && !reduce) {
-  gsap.registerPlugin(ScrollTrigger);
-  if (window.Lenis) {
-    lenis = new Lenis({ lerp: .1 });
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(t => lenis.raf(t * 1000));
-    gsap.ticker.lagSmoothing(0);
-  }
-  gsap.from('.hero h1 span', { yPercent: 110, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: .12, delay: .15 });
-  gsap.from('.hero-row', { opacity: 0, y: 20, duration: 1.1, delay: .7, ease: 'power3.out' });
-  gsap.to('.hero-media img', { scale: 1, duration: 2.6, ease: 'power2.out' });
-  gsap.to('.hero-media', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  $$('.reveal').forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } }));
-} else {
-  $$('.reveal').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
-}
-const goTo = sel => { const t = $(sel); if (!t) return; lenis ? lenis.scrollTo(t, { offset: -10 }) : t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); };
+const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+$$('.reveal').forEach(el => reduce ? el.classList.add('in') : ro.observe(el));
+const goTo = sel => { const t = $(sel); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); };
 $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.getAttribute('href'); if (h.length > 1 && $(h)) { e.preventDefault(); goTo(h); } }));
 
 /* ---------- nav: hide on scroll down, active section ---------- */
@@ -894,7 +883,7 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.g
     mbar.classList.toggle('top', y < innerHeight * .5);
     lastY = y;
   };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  let navQ = false; addEventListener('scroll', () => { if (!navQ) { navQ = true; requestAnimationFrame(() => { navQ = false; onScroll(); }); } }, { passive: true }); onScroll();
   const links = $$('.nav ul a');
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
@@ -909,7 +898,7 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.g
   const set = i => {
     if (i === cur) return; cur = i;
     steps.forEach((s, k) => s.classList.toggle('on', k === i));
-    frames.forEach((f, k) => f.classList.toggle('on', k <= i));
+    frames.forEach((f, k) => f.classList.toggle('on', k === i));
     stage.style.background = DAY[i].sky;
   };
   const tick = () => {
@@ -919,7 +908,10 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.g
     set(Math.min(DAY.length - 1, Math.floor(p * DAY.length)));
     bars.forEach((b, k) => b.style.width = Math.min(100, Math.max(0, (p * DAY.length - k) * 100)) + '%');
   };
-  addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick); set(0); tick();
+  let dayQ = false, dayVis = false;
+  new IntersectionObserver(([e]) => dayVis = e.isIntersecting).observe(sec);
+  addEventListener('scroll', () => { if (dayVis && !dayQ) { dayQ = true; requestAnimationFrame(() => { dayQ = false; tick(); }); } }, { passive: true });
+  addEventListener('resize', tick); set(0); tick();
 })();
 
 /* ---------- day: mobile carousel ---------- */
@@ -994,7 +986,7 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.g
 $$('.floors button').forEach(b => b.addEventListener('click', () => {
   $$('.floors button').forEach(x => x.setAttribute('aria-selected', x === b));
   $$('.floor-panel').forEach(p => { const on = p.dataset.panel === b.dataset.floor; p.hidden = !on; if (on) { p.classList.remove('fade-in'); void p.offsetWidth; p.classList.add('fade-in'); initGals(p); } });
-  if (window.ScrollTrigger) ScrollTrigger.refresh();
+  
 }));
 
 /* ---------- galleries + lightbox ---------- */
@@ -1061,7 +1053,7 @@ $$('#dateChips .chip').forEach(b => b.addEventListener('click', () => {
 /* calendar */
 let calMonth = new Date(st.start.getFullYear(), st.start.getMonth(), 1), picking = 'in';
 const cal = $('#cal'), dateBtn = $('#dateBtn');
-dateBtn.addEventListener('click', () => { const o = cal.hidden; cal.hidden = !o; dateBtn.setAttribute('aria-expanded', o); picking = 'in'; drawCal(); if (window.ScrollTrigger) ScrollTrigger.refresh(); });
+dateBtn.addEventListener('click', () => { const o = cal.hidden; cal.hidden = !o; dateBtn.setAttribute('aria-expanded', o); picking = 'in'; drawCal();  });
 $('#calPrev').onclick = () => { calMonth.setMonth(calMonth.getMonth() - 1); drawCal(); };
 $('#calNext').onclick = () => { calMonth.setMonth(calMonth.getMonth() + 1); drawCal(); };
 function drawCal() {
