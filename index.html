@@ -154,7 +154,8 @@ h3{font:400 clamp(26px,2.6vw,36px)/1.1 var(--display)}
 .rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
 .rating{display:flex;align-items:center;gap:14px}
 .rating b{font:400 56px/1 var(--display);color:var(--honey)}
-.rev-track{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev-track{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1200px) and (min-width:861px){.rev-track{grid-template-columns:repeat(2,1fr)}}
 .rev{border-radius:24px;padding:26px;background:var(--moss);display:flex;flex-direction:column;gap:14px;min-height:220px}
 .rev.ph{background:transparent;border:1.5px dashed rgba(217,163,91,.45)}
 .rev .stars{color:var(--honey);letter-spacing:2px}
@@ -833,9 +834,14 @@ const CONFIG = {
   heroVideo: '',           // 'video/hero.mp4' — AI-відео на першому екрані
   urgency: '',             // напр. 'Новий рік: залишилось 2 вільні номери' — порожньо = сховано
   borderFormUrl: '',       // посилання на зразок заяви для прикордонної зони
-  googleReviewsUrl: 'https://maps.app.goo.gl/7FRZ2gowz24cJ1EM6',
-  rating: null,            // напр. {score: '4,9', count: 27}
-  reviews: [],             // [{text:'...', name:'Олена, Київ', when:'січень 2026'}]
+  googleReviewsUrl: 'https://maps.google.com/?cid=14927702020516053199',
+  rating: {score: '5,0', count: 18},
+  reviews: [
+    {text: 'Неймовірний казковий відпочинок! Мальовничі краєвиди та атмосфера спокою і гармонії. Сауна, басейн, чани! Дякуємо за гостинність, затишок і незабутні враження. Обов\'язково хочеться повернутися знову!', name: 'Тетяна Ц.', when: 'осінь 2026'},
+    {text: 'Чарівне місце серед Карпат — це справді клаптик раю. Розкішні краєвиди, дзюрчання гірської річки поруч, спів пташок навіюють спокій, рівновагу і позитив.', name: 'Леся Р.', when: 'осінь 2026'},
+    {text: 'Відпочивали з сім\'єю цієї осені. Комфортний та затишний будиночок, все зроблено зі смаком. Є все необхідне для відпочинку.', name: 'Оленка М.', when: 'осінь 2026'},
+    {text: 'Умови проживання неймовірні. Справжній чавунний чан. Рекомендую.', name: 'Ігор М.', when: 'осінь 2026'},
+  ],
   winterImages: {},        // {'svitanok':'img/w-svitanok.webp', 'basejn-ranok':'img/w-chan.webp', ...}
 };
 
